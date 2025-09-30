@@ -1,3 +1,4 @@
+#![feature(wasip2)]
 //  * This file is part of the uutils coreutils package.
 //  *
 //  * (c) Joseph Crail <jbcrail@gmail.com>
