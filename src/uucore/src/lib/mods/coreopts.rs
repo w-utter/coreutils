@@ -75,7 +75,12 @@ impl<'a> CoreOptions<'a> {
         self.options.usage(summary)
     }
     pub fn parse(&mut self, args: Vec<String>) -> getopts::Matches {
-        let matches = match self.options.parse(&args[1..]) {
+        #[cfg(target_os = "wasi")]
+        let opts = self.options.parse(&args);
+        #[cfg(not(target_os = "wasi"))]
+        let opts = self.options.parse(&args[1..]);
+
+        let matches = match opts {
             Ok(m) => Some(m),
             Err(f) => {
                 eprint!("{}: error: ", self.help_text.name);
