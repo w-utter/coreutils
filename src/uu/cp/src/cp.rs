@@ -1,4 +1,4 @@
-#![feature(wasip2)]
+#![cfg_attr(target_env = "p2", feature(wasip2))]
 #![cfg_attr(target_os = "wasi", feature(wasi_ext))]
 #![allow(clippy::missing_safety_doc)]
 

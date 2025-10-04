@@ -1,4 +1,4 @@
-#![feature(wasip2)]
+#![cfg_attr(target_env = "p2", feature(wasip2))]
 // This file is part of the uutils coreutils package.
 //
 // (c) Jeremiah Peschka <jeremiah.peschka@gmail.com>
