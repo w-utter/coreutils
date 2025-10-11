@@ -495,8 +495,11 @@ fn display_date(metadata: &Metadata, options: &getopts::Matches) -> String {
     } else {
         mtime(metadata)
     };
+    String::new()
+    /*
     let time = time::at(Timespec::new(secs, 0));
     strftime("%F %R", &time).unwrap()
+    */
 }
 
 #[cfg(not(any(unix, target_os = "wasi")))]
